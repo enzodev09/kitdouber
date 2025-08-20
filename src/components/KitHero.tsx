@@ -89,7 +89,7 @@ const KitHero = () => {
           {/* Hero Image */}
           <div className="relative animate-slide-in-right order-first lg:order-last">
             <div className="relative max-w-md mx-auto lg:max-w-sm xl:max-w-md">
-              <img src="/lovable-uploads/905139a0-64f7-4f84-92fb-91f428e50de4.png" alt="Kit Uber - Produtos reais: marmiteira elétrica, garrafa térmica, aspirador portátil, perfume automotivo e panos de limpeza" className="w-full h-auto rounded-2xl shadow-[var(--shadow-hover)] animate-float" />
+              <img src="/lovable-uploads/8f151d01-50bf-4f7a-82e4-35ba63f5ff3a.png" alt="Kit Uber - Produtos reais: marmiteira elétrica, cooler 6L, aspirador portátil, perfume automotivo e panos de limpeza" className="w-full h-auto rounded-2xl shadow-[var(--shadow-hover)] animate-float" />
               
               {/* Floating Badge */}
               <div className="absolute -top-2 -right-2 lg:-top-4 lg:-right-4 bg-white text-black px-3 py-2 lg:px-6 lg:py-3 rounded-full shadow-xl animate-pulse-slow border-2 border-gray-200">

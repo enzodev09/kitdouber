@@ -36,11 +36,11 @@ const products = [{
   color: "from-indigo-500 to-indigo-600"
 }, {
   id: 5,
-  name: "Garrafa Térmica",
-  description: "Mantém seu café quente por até 8 horas. Aço inoxidável com design ergonômico e anti-vazamento.",
+  name: "Cooler 6L",
+  description: "Cooler térmico de 6 litros, perfeito para manter bebidas e lanches frescos durante longas jornadas.",
   icon: coffeeIcon,
-  features: ["500ml", "8h térmico", "Inox premium"],
-  color: "from-teal-500 to-teal-600"
+  features: ["6 litros", "Isolamento térmico", "Alça resistente"],
+  color: "from-red-500 to-red-600"
 }];
 const KitProducts = () => {
   return <section id="kit-products" className="py-12 lg:py-20 bg-kit-black relative overflow-hidden">
@@ -131,7 +131,7 @@ const KitProducts = () => {
             
             {/* Detailed Price Breakdown */}
             <div className="mb-6">
-              <p className="text-sm lg:text-base text-gray-300 mb-4">💰 Comprando separado você paga R$ 261,59:</p>
+              <p className="text-sm lg:text-base text-gray-300 mb-4">💰 Comprando separado você paga R$ 271,59:</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-2xl mx-auto mb-4">
                 <div className="flex justify-between items-center bg-white/10 text-white px-3 py-2 rounded text-sm border border-white/20">
                   <span>• Aspirador Portátil Premium</span>
@@ -150,14 +150,14 @@ const KitProducts = () => {
                   <span className="font-bold">R$ 35,90</span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 text-white px-3 py-2 rounded text-sm border border-white/20 md:col-span-2">
-                  <span>• Garrafa Térmica 500ml</span>
-                  <span className="font-bold">R$ 39,90</span>
+                  <span>• Cooler Térmico 6L</span>
+                  <span className="font-bold">R$ 49,90</span>
                 </div>
               </div>
               <div className="border-t border-white/20 pt-3">
                 <div className="flex justify-between items-center text-lg font-bold">
                   <span className="text-gray-300">Total Separado:</span>
-                  <span className="text-red-400 line-through">R$ 261,59</span>
+                  <span className="text-red-400 line-through">R$ 271,59</span>
                 </div>
                 <div className="flex justify-between items-center text-xl font-bold mt-1">
                   <span className="text-white">Kit Completo:</span>
@@ -166,11 +166,11 @@ const KitProducts = () => {
               </div>
             </div>
             
-            <div className="flex justify-center gap-6 lg:gap-8">
-              <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-white">36%</div>
-                <div className="text-xs lg:text-sm text-gray-300">de desconto</div>
-              </div>
+              <div className="flex justify-center gap-6 lg:gap-8">
+                <div className="text-center">
+                  <div className="text-2xl lg:text-3xl font-bold text-white">38%</div>
+                  <div className="text-xs lg:text-sm text-gray-300">de desconto</div>
+                </div>
               <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold text-white">3x</div>
                 <div className="text-xs lg:text-sm text-gray-300">sem juros</div>
