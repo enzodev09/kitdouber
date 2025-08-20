@@ -38,9 +38,7 @@ const KitHero = () => {
                  <span className="block bg-gradient-to-r from-kit-blue-light via-white to-kit-blue-light bg-clip-text text-transparent tracking-[-0.01em] drop-shadow-lg">UBER</span>
                </h1>
                
-               <p className="text-base sm:text-lg lg:text-2xl text-white/90 max-w-lg mx-auto lg:mx-0">
-                 Tudo que você precisa para ser o motorista mais preparado e profissional da região.
-               </p>
+               <p className="text-base sm:text-lg lg:text-2xl text-white/90 max-w-lg mx-auto lg:mx-0">Tudo que você precisa para ser o motorista mais preparado e profissional!</p>
             </div>
 
             <div className="space-y-3 lg:space-y-6">
