@@ -142,7 +142,7 @@ const KitBenefits = () => {
           </div>
           <div className="space-y-2">
             <div className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white">Entrega rápida</div>
-            <div className="text-xs lg:text-sm text-gray-300">Grátis SE</div>
+            <div className="text-xs lg:text-sm text-gray-300">Até 7 dias</div>
           </div>
           <div className="space-y-2">
             <div className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white">100%</div>

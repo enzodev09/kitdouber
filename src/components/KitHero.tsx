@@ -80,9 +80,6 @@ const KitHero = () => {
                 </Button>
               </div>
 
-              <div className="text-xs lg:text-sm text-gray-400">
-                <span className="font-semibold text-white">Oferta especial:</span> Frete grátis para região Sudeste!
-              </div>
             </div>
           </div>
 

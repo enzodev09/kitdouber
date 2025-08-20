@@ -177,7 +177,7 @@ const KitProducts = () => {
               </div>
               <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold text-white">✓</div>
-                <div className="text-xs lg:text-sm text-gray-300">grátis SE</div>
+                <div className="text-xs lg:text-sm text-gray-300">qualidade</div>
               </div>
             </div>
           </div>

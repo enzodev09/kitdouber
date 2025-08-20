@@ -98,7 +98,7 @@ const KitCTA = () => {
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
                         <Truck className="w-4 h-4 text-white" />
                       </div>
-                      <span className="font-semibold">Frete Grátis Sudeste</span>
+                      <span className="font-semibold">Entrega Rápida</span>
                     </div>
                     <div className="flex items-center gap-3 text-base">
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
