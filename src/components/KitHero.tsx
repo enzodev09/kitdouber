@@ -97,8 +97,8 @@ const KitHero = () => {
               {/* Price Badge */}
               <div className="absolute -bottom-3 -left-3 lg:-bottom-6 lg:-left-6 bg-black text-white px-4 py-2 lg:px-8 lg:py-4 rounded-2xl shadow-xl border-2 border-white">
                 <div className="text-center">
-                  <div className="text-xs lg:text-sm text-gray-400 line-through">R$ 299,90</div>
-                  <div className="text-xl lg:text-3xl font-bold text-white">R$ 167,00</div>
+                  <div className="text-xs lg:text-sm text-gray-400 line-through">R$ 549,90</div>
+                  <div className="text-xl lg:text-3xl font-bold text-white">R$ 367,00</div>
                   <div className="text-xs text-gray-300">ou até 3x sem juros</div>
                 </div>
               </div>

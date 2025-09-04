@@ -55,14 +55,14 @@ const KitCTA = () => {
                   
                   {/* Flash Sale Badge */}
                   <div className="text-white text-sm font-bold py-2 px-4 rounded-full mx-auto w-fit bg-red-600">
-                    🔥 FLASH SALE - 40% OFF
+                    🔥 FLASH SALE - 33% OFF
                   </div>
 
                   {/* Price Comparison */}
                     <div className="space-y-3">
-                      <div className="text-5xl lg:text-6xl font-bold text-black leading-none">R$ 167,00</div>
+                      <div className="text-5xl lg:text-6xl font-bold text-black leading-none">R$ 367,00</div>
                       <div className="text-lg text-gray-600">
-                        ou <span className="font-bold text-black text-xl">3x de R$ 55,67</span> sem juros
+                        ou <span className="font-bold text-black text-xl">3x de R$ 122,33</span> sem juros
                       </div>
                       
                       {/* Individual vs Kit Pricing */}
@@ -79,16 +79,16 @@ const KitCTA = () => {
                           <div className="border-t border-gray-300 pt-2 mt-3">
                             <div className="flex justify-between items-center text-base">
                               <span className="font-bold text-gray-800">Total Separado:</span>
-                              <span className="font-bold text-red-600 line-through">R$ 261,59</span>
+                              <span className="font-bold text-red-600 line-through">R$ 549,90</span>
                             </div>
                             <div className="flex justify-between items-center text-lg">
                               <span className="font-bold text-green-700">Kit Completo:</span>
-                              <span className="font-bold text-green-700">R$ 167,00</span>
+                              <span className="font-bold text-green-700">R$ 367,00</span>
                             </div>
                           </div>
                         </div>
                         
-                        <div className="bg-green-100 text-green-800 text-lg font-bold py-3 px-4 rounded-lg text-center">🎉 Você economiza R$ 94,59!</div>
+                        <div className="bg-green-100 text-green-800 text-lg font-bold py-3 px-4 rounded-lg text-center">🎉 Você economiza R$ 182,90!</div>
                       </div>
                     </div>
 
@@ -126,7 +126,7 @@ const KitCTA = () => {
                       <div className="flex items-center justify-center gap-2 w-full">
                         <span className="text-lg sm:text-xl">🔥</span>
                         <span className="sm:hidden">COMPRAR AGORA</span>
-                        <span className="hidden sm:inline">COMPRAR AGORA - R$ 167,00</span>
+                        <span className="hidden sm:inline">COMPRAR AGORA - R$ 367,00</span>
                         <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </Button>
@@ -207,8 +207,8 @@ const KitCTA = () => {
                     Kit Completo por apenas:
                   </h3>
                   <div className="text-center text-white">
-                    <div className="text-3xl lg:text-4xl font-bold mb-2">R$ 167,00</div>
-                    <div className="text-lg">3x de R$ 55,67 sem juros</div>
+                    <div className="text-3xl lg:text-4xl font-bold mb-2">R$ 367,00</div>
+                    <div className="text-lg">3x de R$ 122,33 sem juros</div>
                   </div>
                 </CardContent>
               </Card>

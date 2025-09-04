@@ -91,49 +91,49 @@ const KitProducts = () => {
         <div className="text-center mt-12 lg:mt-16 animate-slide-up">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 lg:p-8 max-w-4xl mx-auto border border-white/20">
             <h3 className="text-xl lg:text-2xl font-bold text-white mb-4">
-              Tudo isso por apenas <span className="text-white">R$ 167,00</span>
+              Tudo isso por apenas <span className="text-white">R$ 367,00</span>
             </h3>
             
             {/* Detailed Price Breakdown */}
             <div className="mb-6">
-              <p className="text-sm lg:text-base text-gray-300 mb-4">💰 Comprando separado você paga R$ 271,59:</p>
+              <p className="text-sm lg:text-base text-gray-300 mb-4">💰 Comprando separado você paga R$ 549,90:</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-2xl mx-auto mb-4">
                 <div className="flex justify-between items-center bg-white/10 text-white px-3 py-2 rounded text-sm border border-white/20">
                   <span>• Aspirador Portátil Premium</span>
-                  <span className="font-bold">R$ 89,90</span>
+                  <span className="font-bold">R$ 159,90</span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 text-white px-3 py-2 rounded text-sm border border-white/20">
                   <span>• Marmiteira Elétrica 12V</span>
-                  <span className="font-bold">R$ 79,90</span>
+                  <span className="font-bold">R$ 149,90</span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 text-white px-3 py-2 rounded text-sm border border-white/20">
                   <span>• Aromatizador Automotivo</span>
-                  <span className="font-bold">R$ 15,99</span>
+                  <span className="font-bold">R$ 39,90</span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 text-white px-3 py-2 rounded text-sm border border-white/20">
                   <span>• Kit Organização + Pano</span>
-                  <span className="font-bold">R$ 35,90</span>
+                  <span className="font-bold">R$ 89,90</span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 text-white px-3 py-2 rounded text-sm border border-white/20 md:col-span-2">
                   <span>• Cooler Térmico 6L</span>
-                  <span className="font-bold">R$ 49,90</span>
+                  <span className="font-bold">R$ 109,90</span>
                 </div>
               </div>
               <div className="border-t border-white/20 pt-3">
                 <div className="flex justify-between items-center text-lg font-bold">
                   <span className="text-gray-300">Total Separado:</span>
-                  <span className="text-red-400 line-through">R$ 271,59</span>
+                  <span className="text-red-400 line-through">R$ 549,90</span>
                 </div>
                 <div className="flex justify-between items-center text-xl font-bold mt-1">
                   <span className="text-white">Kit Completo:</span>
-                  <span className="text-green-400">R$ 167,00</span>
+                  <span className="text-green-400">R$ 367,00</span>
                 </div>
               </div>
             </div>
             
               <div className="flex justify-center gap-6 lg:gap-8">
                 <div className="text-center">
-                  <div className="text-2xl lg:text-3xl font-bold text-white">38%</div>
+                  <div className="text-2xl lg:text-3xl font-bold text-white">33%</div>
                   <div className="text-xs lg:text-sm text-gray-300">de desconto</div>
                 </div>
               <div className="text-center">
