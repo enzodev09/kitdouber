@@ -26,6 +26,10 @@ const products = [
   {
     id: 5,
     name: "Cooler Térmico 6L"
+  },
+  {
+    id: 6,
+    name: "Câmera Portátil"
   }
 ];
 const KitProducts = () => {
@@ -54,7 +58,7 @@ const KitProducts = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 lg:mb-16 animate-slide-up">
           <Badge variant="secondary" className="mb-4 bg-white text-black text-xs lg:text-sm">
-            5 Produtos Essenciais
+            6 Produtos Essenciais
           </Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 lg:mb-6">
             O que tem no seu
@@ -65,7 +69,7 @@ const KitProducts = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6">
           {products.map((product, index) => (
             <div key={product.id} className="group animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
               <div className="bg-white/10 border border-white/20 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/15 transition-all duration-300 hover:scale-105">
@@ -96,7 +100,7 @@ const KitProducts = () => {
             
             {/* Detailed Price Breakdown */}
             <div className="mb-6">
-              <p className="text-sm lg:text-base text-gray-300 mb-4">💰 Comprando separado você paga R$ 549,90:</p>
+              <p className="text-sm lg:text-base text-gray-300 mb-4">💰 Comprando separado você paga R$ 619,80:</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-2xl mx-auto mb-4">
                 <div className="flex justify-between items-center bg-white/10 text-white px-3 py-2 rounded text-sm border border-white/20">
                   <span>• Aspirador Portátil Premium</span>
@@ -114,15 +118,19 @@ const KitProducts = () => {
                   <span>• Kit Organização + Pano</span>
                   <span className="font-bold">R$ 89,90</span>
                 </div>
-                <div className="flex justify-between items-center bg-white/10 text-white px-3 py-2 rounded text-sm border border-white/20 md:col-span-2">
+                <div className="flex justify-between items-center bg-white/10 text-white px-3 py-2 rounded text-sm border border-white/20">
                   <span>• Cooler Térmico 6L</span>
                   <span className="font-bold">R$ 109,90</span>
+                </div>
+                <div className="flex justify-between items-center bg-white/10 text-white px-3 py-2 rounded text-sm border border-white/20 md:col-span-2">
+                  <span>• Câmera Portátil Dash Cam</span>
+                  <span className="font-bold">R$ 69,90</span>
                 </div>
               </div>
               <div className="border-t border-white/20 pt-3">
                 <div className="flex justify-between items-center text-lg font-bold">
                   <span className="text-gray-300">Total Separado:</span>
-                  <span className="text-red-400 line-through">R$ 549,90</span>
+                  <span className="text-red-400 line-through">R$ 619,80</span>
                 </div>
                 <div className="flex justify-between items-center text-xl font-bold mt-1">
                   <span className="text-white">Kit Completo:</span>
@@ -133,7 +141,7 @@ const KitProducts = () => {
             
               <div className="flex justify-center gap-6 lg:gap-8">
                 <div className="text-center">
-                  <div className="text-2xl lg:text-3xl font-bold text-white">33%</div>
+                  <div className="text-2xl lg:text-3xl font-bold text-white">41%</div>
                   <div className="text-xs lg:text-sm text-gray-300">de desconto</div>
                 </div>
               <div className="text-center">

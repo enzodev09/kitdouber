@@ -43,10 +43,10 @@ const KitHero = () => {
 
             <div className="space-y-3 lg:space-y-6">
                <div className="flex flex-wrap justify-center lg:justify-start gap-2 lg:gap-4 text-gray-300 text-xs sm:text-sm">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span>5 produtos essenciais</span>
-                </div>
+                 <div className="flex items-center gap-2">
+                   <div className="w-2 h-2 bg-white rounded-full"></div>
+                   <span>6 produtos essenciais</span>
+                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                   <span>Qualidade premium</span>
@@ -84,12 +84,12 @@ const KitHero = () => {
           {/* Hero Image */}
           <div className="relative animate-slide-in-right order-first lg:order-last">
             <div className="relative max-w-md mx-auto lg:max-w-sm xl:max-w-md">
-              <img src="/lovable-uploads/8f151d01-50bf-4f7a-82e4-35ba63f5ff3a.png" alt="Kit Uber - Produtos reais: marmiteira elétrica, cooler 6L, aspirador portátil, perfume automotivo e panos de limpeza" className="w-full h-auto rounded-2xl shadow-[var(--shadow-hover)] animate-float" />
+              <img src="/lovable-uploads/5f285537-bdd3-4a83-8fb5-3bf37b7133fd.png" alt="Kit Uber - Produtos reais: marmiteira elétrica, cooler 6L, aspirador portátil, perfume automotivo, panos de limpeza e câmera portátil" className="w-full h-auto rounded-2xl shadow-[var(--shadow-hover)] animate-float" />
               
               {/* Floating Badge */}
               <div className="absolute -top-2 -right-2 lg:-top-4 lg:-right-4 bg-white text-black px-3 py-2 lg:px-6 lg:py-3 rounded-full shadow-xl animate-pulse-slow border-2 border-gray-200">
                 <div className="text-center">
-                  <div className="text-lg lg:text-2xl font-bold text-black">5 em 1</div>
+                  <div className="text-lg lg:text-2xl font-bold text-black">6 em 1</div>
                   <div className="text-xs text-gray-600">Produtos</div>
                 </div>
               </div>
@@ -97,7 +97,7 @@ const KitHero = () => {
               {/* Price Badge */}
               <div className="absolute -bottom-3 -left-3 lg:-bottom-6 lg:-left-6 bg-black text-white px-4 py-2 lg:px-8 lg:py-4 rounded-2xl shadow-xl border-2 border-white">
                 <div className="text-center">
-                  <div className="text-xs lg:text-sm text-gray-400 line-through">R$ 549,90</div>
+                  <div className="text-xs lg:text-sm text-gray-400 line-through">R$ 619,80</div>
                   <div className="text-xl lg:text-3xl font-bold text-white">R$ 367,00</div>
                   <div className="text-xs text-gray-300">ou até 3x sem juros</div>
                 </div>

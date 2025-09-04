@@ -46,8 +46,8 @@ const KitCTA = () => {
                 <div className="text-center space-y-4 lg:space-y-6">
                   {/* Kit Image */}
                   <div className="flex justify-center mb-3">
-                    <img 
-                      src="/lovable-uploads/a47756be-d8e2-4d30-9853-3a1ef40328d6.png" 
+                   <img 
+                      src="/lovable-uploads/5f285537-bdd3-4a83-8fb5-3bf37b7133fd.png" 
                       alt="Kit Uber Completo" 
                       className="w-24 h-24 lg:w-32 lg:h-32 object-contain"
                     />
@@ -55,7 +55,7 @@ const KitCTA = () => {
                   
                   {/* Flash Sale Badge */}
                   <div className="text-white text-sm font-bold py-2 px-4 rounded-full mx-auto w-fit bg-red-600">
-                    🔥 FLASH SALE - 33% OFF
+                    🔥 FLASH SALE - 41% OFF
                   </div>
 
                   {/* Price Comparison */}
@@ -79,7 +79,7 @@ const KitCTA = () => {
                           <div className="border-t border-gray-300 pt-2 mt-3">
                             <div className="flex justify-between items-center text-base">
                               <span className="font-bold text-gray-800">Total Separado:</span>
-                              <span className="font-bold text-red-600 line-through">R$ 549,90</span>
+                              <span className="font-bold text-red-600 line-through">R$ 619,80</span>
                             </div>
                             <div className="flex justify-between items-center text-lg">
                               <span className="font-bold text-green-700">Kit Completo:</span>
@@ -88,7 +88,7 @@ const KitCTA = () => {
                           </div>
                         </div>
                         
-                        <div className="bg-green-100 text-green-800 text-lg font-bold py-3 px-4 rounded-lg text-center">🎉 Você economiza R$ 182,90!</div>
+                        <div className="bg-green-100 text-green-800 text-lg font-bold py-3 px-4 rounded-lg text-center">🎉 Você economiza R$ 252,80!</div>
                       </div>
                     </div>
 
