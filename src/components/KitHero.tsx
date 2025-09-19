@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 const KitHero = () => {
+  const navigate = useNavigate();
   return <section className="min-h-screen bg-kit-black relative overflow-hidden">
       {/* Blue LED Background Effects */}
       <div className="absolute inset-0">
@@ -58,7 +60,7 @@ const KitHero = () => {
               </div>
 
                <div className="flex flex-col gap-2 lg:gap-4">
-                <Button className="bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 text-white hover:from-orange-600 hover:via-red-600 hover:to-orange-700 px-4 lg:px-10 py-3 lg:py-5 rounded-xl font-bold text-sm lg:text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 group w-full sm:w-auto border-2 border-orange-400 hover:border-orange-300 relative overflow-hidden">
+                <Button onClick={() => navigate('/checkout')} className="bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 text-white hover:from-orange-600 hover:via-red-600 hover:to-orange-700 px-4 lg:px-10 py-3 lg:py-5 rounded-xl font-bold text-sm lg:text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 group w-full sm:w-auto border-2 border-orange-400 hover:border-orange-300 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
                   <div className="relative flex items-center justify-center gap-2">
                     
@@ -98,8 +100,7 @@ const KitHero = () => {
               <div className="absolute -bottom-3 -left-3 lg:-bottom-6 lg:-left-6 bg-black text-white px-4 py-2 lg:px-8 lg:py-4 rounded-2xl shadow-xl border-2 border-white">
                 <div className="text-center">
                   <div className="text-xs lg:text-sm text-gray-400 line-through">R$ 619,80</div>
-                  <div className="text-xl lg:text-3xl font-bold text-white">R$ 367,00</div>
-                  <div className="text-xs text-gray-300">ou até 3x sem juros</div>
+                  <div className="text-xl lg:text-3xl font-bold text-white">R$ 399,00</div>
                 </div>
               </div>
             </div>

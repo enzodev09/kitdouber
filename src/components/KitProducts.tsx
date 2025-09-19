@@ -1,36 +1,50 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import vacuumIcon from "@/assets/vacuum-icon.png";
-import clothIcon from "@/assets/cloth-icon.png";
-import freshenerIcon from "@/assets/freshener-icon.png";
-import lunchboxIcon from "@/assets/lunchbox-icon.png";
-import coffeeIcon from "@/assets/coffee-icon.png";
-import blueElectricWarmerIcon from "@/assets/blue-electric-warmer-icon.png";
 const products = [
+  // Primeiro: Câmera e Marmiteira para aparecerem "em cima"
   {
-    id: 1,
-    name: "Aspirador Portátil"
-  },
-  {
-    id: 2,
-    name: "Panos de Microfibra"
-  },
-  {
-    id: 3,
-    name: "Cheirinho Automotivo"
+    id: 6,
+    name: "Câmera automotiva Full HD",
+    image:
+      "https://oxnkdfaiwbnbbmrjlkei.supabase.co/storage/v1/object/public/imagens/imagens%20hive%20of%20clicks/D_NQ_NP_759698-MLB90984395204_082025-O.webp",
+    description: "Registre suas viagens com vídeo nítido em Full HD.",
   },
   {
     id: 4,
-    name: "Marmiteira Elétrica"
+    name: "Marmiteira Elétrica 12V",
+    image:
+      "https://oxnkdfaiwbnbbmrjlkei.supabase.co/storage/v1/object/public/imagens/imagens%20hive%20of%20clicks/014553A000001-marmita-eletrica-1-5l-bivolt-60w-ar0902-startools--1-.jpg.webp",
+    description: "Aqueça suas refeições no carro com praticidade.",
+  },
+  // Demais produtos
+  {
+    id: 1,
+    name: "Aspirador Portátil Premium",
+    image:
+      "https://oxnkdfaiwbnbbmrjlkei.supabase.co/storage/v1/object/public/imagens/imagens%20hive%20of%20clicks/aspirador_portatil_sem_fio_automotivo_recarregavel_premium_1571969801_877f_600x600.jpg",
+    description: "Potência e agilidade para limpeza rápida do carro.",
+  },
+  {
+    id: 2,
+    name: "Kit Organização + Pano",
+    image:
+      "https://oxnkdfaiwbnbbmrjlkei.supabase.co/storage/v1/object/public/imagens/imagens%20hive%20of%20clicks/4e6fdd70de529374c1bfad627e491858.webp",
+    description: "Organize o porta-malas e limpe com microfibra.",
+  },
+  {
+    id: 3,
+    name: "Aromatizador Automotivo",
+    image:
+      "https://oxnkdfaiwbnbbmrjlkei.supabase.co/storage/v1/object/public/imagens/imagens%20hive%20of%20clicks/aromatizante_automotivo_perfume_carro_novo_suave_60ml_8670_1_78f63ee9f9a596a6d2ac6e2c1ba691e4.webp",
+    description: "Perfuma e neutraliza odores por mais tempo.",
   },
   {
     id: 5,
-    name: "Cooler Térmico 6L"
+    name: "Cooler Térmico 6L",
+    image:
+      "https://oxnkdfaiwbnbbmrjlkei.supabase.co/storage/v1/object/public/imagens/imagens%20hive%20of%20clicks/da31a4fa0ef97065f0c5fb750df5c46a.webp",
+    description: "Mantém bebidas e lanches na temperatura ideal.",
   },
-  {
-    id: 6,
-    name: "Câmera Portátil"
-  }
 ];
 const KitProducts = () => {
   return <section id="kit-products" className="py-12 lg:py-20 bg-kit-black relative overflow-hidden">
@@ -73,11 +87,14 @@ const KitProducts = () => {
           {products.map((product, index) => (
             <div key={product.id} className="group animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
               <div className="bg-white/10 border border-white/20 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/15 transition-all duration-300 hover:scale-105">
-                {/* Product Image Placeholder */}
-                <div className="aspect-square bg-gray-800/50 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center">
-                    <div className="w-8 h-8 bg-white/30 rounded"></div>
-                  </div>
+                {/* Product Image */}
+                <div className="aspect-square bg-gray-900/40 flex items-center justify-center">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-contain p-4"
+                    loading="lazy"
+                  />
                 </div>
                 
                 {/* Product Title */}
@@ -85,6 +102,9 @@ const KitProducts = () => {
                   <h3 className="text-sm font-semibold text-white leading-tight group-hover:text-gray-200 transition-colors">
                     {product.name}
                   </h3>
+                  <p className="text-[11px] text-gray-300 mt-1">
+                    {product.description}
+                  </p>
                 </div>
               </div>
             </div>
@@ -95,7 +115,7 @@ const KitProducts = () => {
         <div className="text-center mt-12 lg:mt-16 animate-slide-up">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 lg:p-8 max-w-4xl mx-auto border border-white/20">
             <h3 className="text-xl lg:text-2xl font-bold text-white mb-4">
-              Tudo isso por apenas <span className="text-white">R$ 367,00</span>
+              Tudo isso por apenas <span className="text-white">R$ 399,00</span>
             </h3>
             
             {/* Detailed Price Breakdown */}
@@ -123,7 +143,7 @@ const KitProducts = () => {
                   <span className="font-bold">R$ 109,90</span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 text-white px-3 py-2 rounded text-sm border border-white/20 md:col-span-2">
-                  <span>• Câmera Portátil Dash Cam</span>
+                  <span>• Câmera automotiva Full HD</span>
                   <span className="font-bold">R$ 69,90</span>
                 </div>
               </div>
@@ -134,7 +154,7 @@ const KitProducts = () => {
                 </div>
                 <div className="flex justify-between items-center text-xl font-bold mt-1">
                   <span className="text-white">Kit Completo:</span>
-                  <span className="text-green-400">R$ 367,00</span>
+                  <span className="text-green-400">R$ 399,00</span>
                 </div>
               </div>
             </div>
@@ -144,10 +164,7 @@ const KitProducts = () => {
                   <div className="text-2xl lg:text-3xl font-bold text-white">41%</div>
                   <div className="text-xs lg:text-sm text-gray-300">de desconto</div>
                 </div>
-              <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-white">3x</div>
-                <div className="text-xs lg:text-sm text-gray-300">sem juros</div>
-              </div>
+              {/* Removed installments info as requested */}
               <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold text-white">✓</div>
                 <div className="text-xs lg:text-sm text-gray-300">qualidade</div>

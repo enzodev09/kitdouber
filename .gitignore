@@ -1,3 +1,17 @@
+##########################
+# General / Node / Vite  #
+##########################
+
+# Dependencies
+node_modules/
+
+# Builds
+dist/
+dist-ssr/
+.dist/
+.build/
+build/
+
 # Logs
 logs
 *.log
@@ -7,16 +21,21 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Env & local configs
+.env*
+!.env.example
 *.local
 
-# Editor directories and files
+# Vite caches
+.cache/
+.vite/
+
+# Editor/OS files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
