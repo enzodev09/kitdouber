@@ -19,12 +19,7 @@ const initialForm: CheckoutForm = {
   number: "",
   zip: "",
   selectedOptionId: undefined,
-};
-
-const SHIPPING_PRICE_MAP: Record<string, number> = {
-  economy: 0,
-  standard: 19.9,
-  express: 34.9,
+  selectedOptionPrice: undefined,
 };
 
 const CheckoutPage = () => {
@@ -32,7 +27,7 @@ const CheckoutPage = () => {
   const [form, setForm] = useState<CheckoutForm>(initialForm);
 
   const subtotal = 399; // preço do kit
-  const shippingPrice = form.selectedOptionId ? (SHIPPING_PRICE_MAP[form.selectedOptionId] ?? 0) : 0;
+  const shippingPrice = form.selectedOptionId ? (form.selectedOptionPrice ?? 0) : 0;
 
   const canNext = useMemo(() => {
     if (step === 1) return !!(form.fullName && form.email && form.phone);
@@ -98,10 +93,12 @@ const CheckoutPage = () => {
               <Button variant="outline" className="border-gray-300 text-slate-800" onClick={back} disabled={step === 1}>
                 <ArrowLeft className="w-4 h-4 mr-2" /> Voltar
               </Button>
-              <Button onClick={next} disabled={!canNext} className="bg-blue-600 hover:bg-blue-700 text-white font-bold">
-                {step === 3 ? "Finalizar" : "Avançar"}
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+              {step !== 3 && (
+                <Button onClick={next} disabled={!canNext} className="bg-blue-600 hover:bg-blue-700 text-white font-bold">
+                  Avançar
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              )}
             </div>
           </div>
 

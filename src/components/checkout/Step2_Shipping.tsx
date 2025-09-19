@@ -8,6 +8,7 @@ export type ShippingDetails = {
   number: string;
   zip: string; // CEP
   selectedOptionId?: string;
+  selectedOptionPrice?: number;
 };
 
 type ShippingOption = {
@@ -110,7 +111,7 @@ const Step2_Shipping = ({ data, onChange }: Props) => {
                   type="radio"
                   name="shippingOption"
                   checked={data.selectedOptionId === opt.id}
-                  onChange={() => onChange({ selectedOptionId: opt.id })}
+                  onChange={() => onChange({ selectedOptionId: opt.id, selectedOptionPrice: opt.price })}
                 />
                 <span className="text-slate-800">{opt.label} • {opt.eta}</span>
               </div>
