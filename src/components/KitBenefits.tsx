@@ -82,8 +82,8 @@ const KitBenefits = () => {
               <div className="text-black text-lg lg:text-xl font-bold mb-2">
                 🎉 VOCÊ ECONOMIZA
               </div>
-              <div className="text-black text-5xl lg:text-6xl font-bold mb-3">R$ 94,59</div>
-              <div className="text-black text-base lg:text-lg font-semibold mb-2">Isso é mais de 36% de desconto!</div>
+              <div className="text-black text-5xl lg:text-6xl font-bold mb-3">R$ 220,00</div>
+              <div className="text-black text-base lg:text-lg font-semibold mb-2">Desconto real no kit completo!</div>
               <div className="text-black/80 text-sm lg:text-base">
                 Todos os produtos que você precisa por um preço que cabe no seu bolso
               </div>
@@ -91,51 +91,9 @@ const KitBenefits = () => {
           </div>
         </div>
 
-        {/* Social Proof Section */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-white/20">
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Users className="w-6 h-6 text-white" />
-              <Badge variant="secondary" className="bg-white text-black">
-                +10.000 motoristas satisfeitos
-              </Badge>
-            </div>
-            <h3 className="text-3xl font-bold text-white mb-4">
-              O que nossos clientes dizem
-            </h3>
-            <div className="flex items-center justify-center gap-1 mb-2">
-              {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />)}
-              <span className="ml-2 text-lg font-semibold text-white">4.9/5</span>
-            </div>
-            <p className="text-gray-300">Baseado em mais de 3.000 avaliações</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => <Card key={index} className="border-0 bg-white/20 backdrop-blur-sm" style={{
-            animationDelay: `${index * 0.2}s`
-          }}>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
-                  </div>
-                  <p className="text-white mb-4 italic">
-                    "{testimonial.comment}"
-                  </p>
-                  <div className="pt-4">
-                    <div className="font-semibold text-white">{testimonial.name}</div>
-                    <div className="text-sm text-gray-300">{testimonial.city}</div>
-                  </div>
-                </CardContent>
-              </Card>)}
-          </div>
-        </div>
 
         {/* Stats Section */}
-        <div className="mt-12 lg:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
-          <div className="space-y-2">
-            <div className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white">+10k</div>
-            <div className="text-xs lg:text-sm text-gray-300">Motoristas atendidos</div>
-          </div>
+        <div className="mt-12 lg:mt-16 grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 text-center">
           <div className="space-y-2">
             <div className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white">4.9★</div>
             <div className="text-xs lg:text-sm text-gray-300">Avaliação média</div>

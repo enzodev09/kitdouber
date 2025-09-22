@@ -9,6 +9,7 @@ export type ShippingDetails = {
   zip: string; // CEP
   selectedOptionId?: string;
   selectedOptionPrice?: number;
+  selectedOptionLabel?: string;
 };
 
 type ShippingOption = {
@@ -32,6 +33,7 @@ type Props = {
 const Step2_Shipping = ({ data, onChange }: Props) => {
   const [options, setOptions] = useState<ShippingOption[]>(mockOptions);
   const [loading, setLoading] = useState(false);
+  const formatBRL = (v: number) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
   const handleCalculateShipping = async () => {
     setLoading(true);
@@ -111,11 +113,11 @@ const Step2_Shipping = ({ data, onChange }: Props) => {
                   type="radio"
                   name="shippingOption"
                   checked={data.selectedOptionId === opt.id}
-                  onChange={() => onChange({ selectedOptionId: opt.id, selectedOptionPrice: opt.price })}
+                  onChange={() => onChange({ selectedOptionId: opt.id, selectedOptionPrice: opt.price, selectedOptionLabel: opt.label })}
                 />
                 <span className="text-slate-800">{opt.label} • {opt.eta}</span>
               </div>
-              <span className="text-slate-900 font-semibold">{opt.price === 0 ? "Grátis" : `R$ ${opt.price.toFixed(2)}`}</span>
+              <span className="text-slate-900 font-semibold">{opt.price === 0 ? "Grátis" : formatBRL(opt.price)}</span>
             </label>
           ))}
         </div>

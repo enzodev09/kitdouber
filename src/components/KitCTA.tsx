@@ -6,6 +6,12 @@ import { useNavigate } from "react-router-dom";
 
 const KitCTA = () => {
   const navigate = useNavigate();
+  // Pricing constants
+  const KIT_PRICE = 399.0;
+  // Ajuste do total separado para refletir economia maior
+  const TOTAL_SEPARADO = 619.0; // Ajustado para economizar R$ 220,00 em relação ao kit
+  const savings = TOTAL_SEPARADO - KIT_PRICE;
+  const fmtBRL = (v: number) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
   return (
     <section className="py-8 lg:py-20 bg-kit-black relative overflow-hidden">
       {/* Blue LED Background Effects */}
@@ -73,7 +79,7 @@ const KitCTA = () => {
 
                   {/* Price Comparison */}
                   <div className="space-y-3">
-                    <div className="text-5xl lg:text-6xl font-bold text-black leading-none">R$ 399,00</div>
+                    <div className="text-5xl lg:text-6xl font-bold text-black leading-none">{fmtBRL(KIT_PRICE)}</div>
 
                     {/* Individual vs Kit Pricing */}
                     <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 space-y-3">
@@ -81,17 +87,17 @@ const KitCTA = () => {
                         <div className="border-t border-gray-300 pt-2 mt-3">
                           <div className="flex justify-between items-center text-base">
                             <span className="font-bold text-gray-800">Total Separado:</span>
-                            <span className="font-bold text-red-600 line-through">R$ 619,80</span>
+                            <span className="font-bold text-red-600 line-through">{fmtBRL(TOTAL_SEPARADO)}</span>
                           </div>
                           <div className="flex justify-between items-center text-lg">
                             <span className="font-bold text-green-700">Kit Completo:</span>
-                            <span className="font-bold text-green-700">R$ 399,00</span>
+                            <span className="font-bold text-green-700">{fmtBRL(KIT_PRICE)}</span>
                           </div>
                         </div>
                       </div>
 
                       <div className="bg-green-100 text-green-800 text-lg font-bold py-3 px-4 rounded-lg text-center">
-                        🎉 Você economiza R$ 252,80!
+                        🎉 Você economiza {fmtBRL(savings)}!
                       </div>
                     </div>
                   </div>
@@ -127,7 +133,7 @@ const KitCTA = () => {
                   {/* CTA Button */}
                   <div className="space-y-4">
                     <Button
-                      onClick={() => navigate("/checkout")}
+                      onClick={() => window.open('https://ale-chaves-confeccoes.pay.yampi.com.br/r/C2MG7LA0QX', '_blank')}
                       className="bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 text-white hover:from-orange-600 hover:via-red-600 hover:to-orange-700 w-full text-lg sm:text-xl font-extrabold py-4 sm:py-6 px-4 rounded-2xl group shadow-2xl transform hover:scale-[1.02] active:scale-95 transition-all duration-200 border-2 border-orange-400 hover:border-orange-300"
                     >
                       <div className="flex items-center justify-center gap-2 w-full">
@@ -206,37 +212,6 @@ const KitCTA = () => {
                   <div className="text-sm opacity-90">Não perca essa oportunidade única!</div>
                 </CardContent>
               </Card>
-
-              {/* What's Included */}
-              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 animate-slide-up">
-                <CardContent className="p-6 lg:p-8">
-                  <h3 className="text-2xl font-bold text-white mb-6 text-center">Kit Completo por apenas:</h3>
-                  <div className="text-center text-white">
-                    <div className="text-3xl lg:text-4xl font-bold mb-2">R$ 399,00</div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Social Proof */}
-              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 animate-slide-up">
-                <CardContent className="p-6 lg:p-8 text-center">
-                  <h4 className="text-xl font-bold text-white mb-4">Motoristas já aprovaram!</h4>
-                  <div className="grid grid-cols-3 gap-4 text-white">
-                    <div>
-                      <div className="text-2xl font-bold">4.9★</div>
-                      <div className="text-sm text-gray-300">Avaliação</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold">98%</div>
-                      <div className="text-sm text-gray-300">Recomendam</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold">até 8 dias</div>
-                      <div className="text-sm text-gray-300">Sudeste grátis</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
 
@@ -247,12 +222,15 @@ const KitCTA = () => {
           <div className="flex flex-col sm:flex-row gap-2 lg:gap-4 justify-center animate-slide-up mb-6 lg:mb-12">
             <Button
               variant="outline"
-              onClick={() => navigate("/checkout")}
+              onClick={() => window.open('https://ale-chaves-confeccoes.pay.yampi.com.br/r/C2MG7LA0QX', '_blank')}
               className="border-2 border-white text-white bg-black/20 backdrop-blur-sm px-4 lg:px-8 py-3 lg:py-4 rounded-xl font-bold text-xs lg:text-lg hover:bg-white hover:text-black transition-all duration-300"
             >
               Comprar agora
             </Button>
-            <Button className="bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 border-2 border-green-400 hover:border-green-300 px-4 lg:px-8 py-3 lg:py-4 rounded-xl font-bold text-xs lg:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg group relative overflow-hidden">
+            <Button
+              onClick={() => window.open('https://wa.me/5511963107364', '_blank')}
+              className="bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 border-2 border-green-400 hover:border-green-300 px-4 lg:px-8 py-3 lg:py-4 rounded-xl font-bold text-xs lg:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg group relative overflow-hidden"
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-green-600/20 animate-pulse"></div>
               <div className="relative flex items-center justify-center gap-2">
                 <MessageCircle className="w-5 h-5 animate-bounce" />
@@ -267,8 +245,8 @@ const KitCTA = () => {
           {/* Trust Indicators */}
           <div className="grid grid-cols-3 gap-4 lg:gap-8 text-center text-gray-300 animate-slide-up">
             <div>
-              <div className="text-xl lg:text-2xl font-bold text-white">até 8 dias</div>
-              <div className="text-xs lg:text-sm">Sudeste grátis</div>
+              <div className="text-xl lg:text-2xl font-bold text-white">Entrega</div>
+              <div className="text-xs lg:text-sm">Rápida</div>
             </div>
             <div>
               <div className="text-xl lg:text-2xl font-bold text-white">4.9★</div>

@@ -23,10 +23,26 @@ const corsHeaders = {
 };
 
 const mock: ShippingOption[] = [
-  { id: "economy", label: "Econômico", price: 0, eta: "6-8 dias úteis" },
   { id: "standard", label: "Padrão", price: 19.9, eta: "3-5 dias úteis" },
   { id: "express", label: "Expresso", price: 34.9, eta: "1-2 dias úteis" },
 ];
+
+const env = (Deno.env.get("MELHOR_ENVIO_ENV") ?? "sandbox").toLowerCase();
+const API_BASE = env === "prod"
+  ? "https://api.melhorenvio.com.br/api/v2"
+  : "https://sandbox.melhorenvio.com.br/api/v2";
+
+const parsePrice = (q: any): number => {
+  const candidates = [q.final_price, q.price, q.custom_price, q.total, q.cost];
+  for (const c of candidates) {
+    if (typeof c === "number" && Number.isFinite(c)) return c;
+    if (typeof c === "string") {
+      const n = parseFloat(c.replace(",", "."));
+      if (Number.isFinite(n)) return n;
+    }
+  }
+  return 0;
+};
 
 serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -59,20 +75,19 @@ serve(async (req) => {
       });
     }
 
-    // Minimal example call — you'll likely adapt to your seller/shipper id and package info
-    // Reference: https://docs.melhorevio.com.br/
+    // Minimal example call — adjust weight/dimensions to your product
+    // Reference: https://docs.melhorenvio.com.br/
     const calcPayload = {
-      // Set your origin zip in a secret or hard-code for now
-      from: { postal_code: Deno.env.get("ORIGIN_ZIP") ?? "01001-000" },
+      from: { postal_code: Deno.env.get("ORIGIN_ZIP") ?? "04925-000" },
       to: { postal_code: zip },
-      // Example package — update with real weight/dimensions later
-      packages: [
-        { height: 10, width: 20, length: 25, weight: 1 },
+      products: [
+        { id: "kit", width: 35, height: 30, length: 35, weight: 1.0, insurance_value: 399, quantity: 1 },
       ],
-      services: [], // empty means all services the account can use
+      options: { receipt: false, own_hand: false, reverse: false, non_commercial: true },
+      // services: [] => all available
     };
 
-    const url = "https://www.melhorenvio.com.br/api/v2/me/shipment/calculate";
+    const url = `${API_BASE}/me/shipment/calculate`;
     const resp = await fetch(url, {
       method: "POST",
       headers: {
@@ -94,12 +109,22 @@ serve(async (req) => {
 
     const quotes = await resp.json();
     // Map quotes to our minimal UI structure
-    const options: ShippingOption[] = (Array.isArray(quotes) ? quotes : []).slice(0, 5).map((q: any) => ({
-      id: String(q.id ?? q.service ?? crypto.randomUUID()),
-      label: String(q.name ?? q.company?.name ?? "Serviço"),
-      price: Number(q.price ?? q.custom_price ?? 0),
-      eta: String(q.delivery_time?.days ? `${q.delivery_time.days} dias úteis` : "-"),
-    }));
+    const list = Array.isArray(quotes) ? quotes : [];
+    const options: ShippingOption[] = list.slice(0, 8).map((q: any) => {
+      const company = q.company?.name ?? q.company_name ?? "";
+      const service = q.name ?? q.service?.name ?? q.service_name ?? "Serviço";
+      const eta = q.delivery_range?.min && q.delivery_range?.max
+        ? `${q.delivery_range.min}-${q.delivery_range.max} dias úteis`
+        : q.delivery_time?.days
+        ? `${q.delivery_time.days} dias úteis`
+        : "-";
+      return {
+        id: String(q.id ?? q.service?.id ?? `${company}-${service}`),
+        label: [company, service].filter(Boolean).join(" • "),
+        price: parsePrice(q),
+        eta,
+      };
+    }).filter((o) => Number.isFinite(o.price));
 
     return new Response(JSON.stringify({ options: options.length ? options : mock }), {
       headers: { "Content-Type": "application/json", ...corsHeaders },

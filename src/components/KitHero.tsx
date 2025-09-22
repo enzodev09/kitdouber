@@ -60,7 +60,7 @@ const KitHero = () => {
               </div>
 
                <div className="flex flex-col gap-2 lg:gap-4">
-                <Button onClick={() => navigate('/checkout')} className="bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 text-white hover:from-orange-600 hover:via-red-600 hover:to-orange-700 px-4 lg:px-10 py-3 lg:py-5 rounded-xl font-bold text-sm lg:text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 group w-full sm:w-auto border-2 border-orange-400 hover:border-orange-300 relative overflow-hidden">
+                <Button onClick={() => window.open('https://ale-chaves-confeccoes.pay.yampi.com.br/r/C2MG7LA0QX', '_blank')} className="bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 text-white hover:from-orange-600 hover:via-red-600 hover:to-orange-700 px-4 lg:px-10 py-3 lg:py-5 rounded-xl font-bold text-sm lg:text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 group w-full sm:w-auto border-2 border-orange-400 hover:border-orange-300 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
                   <div className="relative flex items-center justify-center gap-2">
                     

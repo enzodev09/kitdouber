@@ -1,33 +1,11 @@
 // @ts-nocheck
 // Supabase Edge Function: process-payment
-// Creates a Mercado Pago preference and returns its id and init_point.
-// Requires secret: MERCADO_PAGO_ACCESS_TOKEN
+// Creates a Mercado Pago payment (Pix or Card) using Checkout Bricks data (no redirect)
+// Requires secret: MERCADO_PAGO_ACCESS_TOKEN (supports MERCADO_PAGO_ACESSO_TOKEN fallback)
 
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 
-type CreatePaymentRequest = {
-  customer?: {
-    fullName?: string;
-    email?: string;
-    phone?: string;
-  };
-  shipping?: {
-    address?: string;
-    number?: string;
-    zip?: string;
-    selectedOptionId?: string;
-  };
-  items?: Array<{
-    title: string;
-    quantity: number;
-    unit_price: number;
-    currency_id?: string;
-  }>;
-  totals?: {
-    subtotal: number;
-    shippingPrice: number;
-  };
-};
+type CreatePaymentRequest = any;
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -48,7 +26,7 @@ serve(async (req) => {
       });
     }
 
-    const MP_TOKEN = Deno.env.get("MERCADO_PAGO_ACCESS_TOKEN");
+    const MP_TOKEN = Deno.env.get("MERCADO_PAGO_ACCESS_TOKEN") ?? Deno.env.get("MERCADO_PAGO_ACESSO_TOKEN");
     if (!MP_TOKEN) {
       return new Response(JSON.stringify({ error: "Missing MERCADO_PAGO_ACCESS_TOKEN" }), {
         status: 500,
@@ -57,69 +35,65 @@ serve(async (req) => {
     }
 
     const body = (await req.json()) as CreatePaymentRequest;
-    const origin = req.headers.get("origin") ?? undefined;
+    const amount = Number(body.amount);
+    if (!Number.isFinite(amount) || amount <= 0) {
+      return new Response(JSON.stringify({ error: "invalid amount" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
 
-    const orderId = crypto.randomUUID();
+    const mode = (body.mode ?? body.paymentMethod ?? "pix").toLowerCase();
+    const payerEmail = body.customer?.email;
 
-    // Compose items — fall back to single item if not sent
-    const items = (body.items && body.items.length > 0)
-      ? body.items.map((it) => ({
-          title: it.title,
-          quantity: it.quantity,
-          unit_price: it.unit_price,
-          currency_id: it.currency_id ?? "BRL",
-        }))
-      : [
-          {
-            title: "Kit Douber",
-            quantity: 1,
-            unit_price: 399,
-            currency_id: "BRL",
-          },
-        ];
-
-    const back_urls = origin
-      ? {
-          success: `${origin}/checkout?status=success&order=${orderId}`,
-          failure: `${origin}/checkout?status=failure&order=${orderId}`,
-          pending: `${origin}/checkout?status=pending&order=${orderId}`,
-        }
-      : undefined;
-
-    const preferencePayload = {
-      items,
-      external_reference: orderId,
-      back_urls,
-      auto_return: "approved" as const,
-      // Additional optional fields could be set here (payer, shipments, notification_url)
+    // Build payload for /v1/payments
+    let paymentPayload: any = {
+      transaction_amount: amount,
+      description: "Kit Douber",
+      payer: { email: payerEmail },
     };
 
-    const resp = await fetch("https://api.mercadopago.com/checkout/preferences", {
+    if (mode === "card") {
+      const f = body.cardFormData ?? {};
+      paymentPayload = {
+        ...paymentPayload,
+        token: f.token,
+        installments: f.installments ?? 1,
+        payment_method_id: f.payment_method_id,
+        issuer_id: f.issuer_id,
+        payer: {
+          email: payerEmail,
+          identification: f.payer?.identification,
+        },
+      };
+    } else if (mode === "pix") {
+      paymentPayload = { ...paymentPayload, payment_method_id: "pix" };
+    } else {
+      return new Response(JSON.stringify({ error: "invalid mode" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
+    const resp = await fetch("https://api.mercadopago.com/v1/payments", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${MP_TOKEN}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(preferencePayload),
+      body: JSON.stringify(paymentPayload),
     });
 
-    if (!resp.ok) {
-      const text = await resp.text();
-      console.error("Mercado Pago error", resp.status, text);
-      return new Response(JSON.stringify({ error: "Mercado Pago API error", status: resp.status }), {
+    const json = await resp.json();
+    if (!resp.ok || !json?.id) {
+      console.error("Mercado Pago payment error", resp.status, json);
+      return new Response(JSON.stringify({ error: "mp_payment_error", status: resp.status, detail: json }), {
         status: 502,
         headers: { "Content-Type": "application/json", ...corsHeaders },
       });
     }
 
-    const pref = await resp.json();
-    const response = {
-      orderId,
-      preferenceId: pref.id as string,
-      initPoint: (pref.init_point || pref.sandbox_init_point) as string | undefined,
-    };
-
-    return new Response(JSON.stringify(response), {
+    return new Response(JSON.stringify({ id: json.id, status: json.status, detail: json }), {
       headers: { "Content-Type": "application/json", ...corsHeaders },
       status: 200,
     });
