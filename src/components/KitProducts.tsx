@@ -7,14 +7,14 @@ const products = [
     name: "Câmera automotiva Full HD",
     image:
       "https://oxnkdfaiwbnbbmrjlkei.supabase.co/storage/v1/object/public/imagens/imagens%20hive%20of%20clicks/D_NQ_NP_759698-MLB90984395204_082025-O.webp",
-    description: "Mais segurança nas suas corridas. Se previna de falsas denúncias, acidentes ou problemas com passageiros. Tenha provas concretas e dirija com tranquilidade.",
+    description: "Registra tudo e te protege de reclamações ou imprevistos nas corridas.",
   },
   {
     id: 4,
     name: "Marmiteira Elétrica 12V",
     image:
       "https://oxnkdfaiwbnbbmrjlkei.supabase.co/storage/v1/object/public/imagens/imagens%20hive%20of%20clicks/014553A000001-marmita-eletrica-1-5l-bivolt-60w-ar0902-startools--1-.jpg.webp",
-    description: "Cansado de comida fria e gastos extras na rua? Tenha uma refeição quente e caseira a qualquer momento, otimizando seu tempo e economizando nas suas longas jornadas.",
+    description: "Comida quente no carro sem gastar fora: plugou, aqueceu e pronto.",
   },
   // Demais produtos
   {
@@ -22,28 +22,28 @@ const products = [
     name: "Aspirador Portátil Premium",
     image:
       "https://oxnkdfaiwbnbbmrjlkei.supabase.co/storage/v1/object/public/imagens/imagens%20hive%20of%20clicks/aspirador_portatil_sem_fio_automotivo_recarregavel_premium_1571969801_877f_600x600.jpg",
-    description: "Mantenha seu carro impecável sem complicação. Livre-se rapidamente de migalhas, poeira e sujeiras. Ofereça uma experiência premium e evite notas baixas ou reclamações por um veículo sujo.",
+    description: "Remove migalhas e poeira rápido e mantém o carro limpo e bem avaliado.",
   },
   {
     id: 2,
     name: "Pano Microfibra",
     image:
       "https://oxnkdfaiwbnbbmrjlkei.supabase.co/storage/v1/object/public/imagens/imagens%20hive%20of%20clicks/4e6fdd70de529374c1bfad627e491858.webp",
-    description: "Acabe com poeira e manchas em segundos. Pano de microfibra que não risca nem solta fiapos, ideal para painel, vidros e bancos. Deixa o carro sempre apresentável e evita reclamações dos passageiros.",
+    description: "Limpa painel, vidros e bancos sem riscar nem soltar fiapos.",
   },
   {
     id: 3,
     name: "Aromatizador Automotivo",
     image:
       "https://oxnkdfaiwbnbbmrjlkei.supabase.co/storage/v1/object/public/imagens/imagens%20hive%20of%20clicks/aromatizante_automotivo_perfume_carro_novo_suave_60ml_8670_1_78f63ee9f9a596a6d2ac6e2c1ba691e4.webp",
-    description: "Elimine odores indesejáveis e garanta uma atmosfera sempre fresca. Evite reclamações de passageiros por cheiros desagradáveis e proporcione uma viagem muito mais agradável para todos.",
+    description: "Cheiro agradável sempre e nada de passageiros reclamando de odores.",
   },
   {
     id: 5,
     name: "Cooler Térmico 6L",
     image:
       "https://oxnkdfaiwbnbbmrjlkei.supabase.co/storage/v1/object/public/imagens/imagens%20hive%20of%20clicks/da31a4fa0ef97065f0c5fb750df5c46a.webp",
-    description: "Bebidas quentes no calor? Nunca mais! Mantenha suas bebidas geladas e alimentos frescos durante todo o dia. Evite paradas desnecessárias e desfrute de conforto em qualquer corrida.",
+    description: "Mantém bebidas geladas e lanches frescos o dia inteiro.",
   },
 ];
 const KitProducts = () => {
