@@ -8,9 +8,10 @@ const KitCTA = () => {
   const navigate = useNavigate();
   // Pricing constants
   const KIT_PRICE = 399.0;
-  // Ajuste do total separado para refletir economia maior
-  const TOTAL_SEPARADO = 619.0; // Ajustado para economizar R$ 220,00 em relação ao kit
-  const savings = TOTAL_SEPARADO - KIT_PRICE;
+  // Total se comprasse tudo separado (mantendo 619,80 exibido na página)
+  const TOTAL_SEPARADO = 619.8;
+  const savings = TOTAL_SEPARADO - KIT_PRICE; // 220,80 ~ arredonda para 220,00 visual
+  const discountPercent = Math.round((savings / TOTAL_SEPARADO) * 100); // ~36%
   const fmtBRL = (v: number) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
   return (
     <section className="py-8 lg:py-20 bg-kit-black relative overflow-hidden">
@@ -74,7 +75,7 @@ const KitCTA = () => {
 
                   {/* Flash Sale Badge */}
                   <div className="text-white text-sm font-bold py-2 px-4 rounded-full mx-auto w-fit bg-red-600">
-                    🔥 FLASH SALE - 41% OFF
+                    🔥 FLASH SALE - {discountPercent}% OFF
                   </div>
 
                   {/* Price Comparison */}

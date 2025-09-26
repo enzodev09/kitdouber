@@ -47,6 +47,10 @@ const products = [
   },
 ];
 const KitProducts = () => {
+  const kitPrice = 399.0;
+  const totalSeparado = 619.8;
+  const savings = totalSeparado - kitPrice; // 220.8 ~ 220 visual
+  const discountPercent = Math.round((savings / totalSeparado) * 100); // ~36
   return (
     <section id="kit-products" className="py-12 lg:py-20 bg-kit-black relative overflow-hidden">
       {/* Blue LED Background Effects */}
@@ -173,7 +177,7 @@ const KitProducts = () => {
 
               <div className="flex justify-center gap-8">
                 <div className="text-center">
-                  <div className="text-2xl lg:text-3xl font-black text-white">41%</div>
+                  <div className="text-2xl lg:text-3xl font-black text-white">{discountPercent}%</div>
                   <div className="text-xs lg:text-sm text-gray-300">de desconto</div>
                 </div>
                 <div className="text-center">
