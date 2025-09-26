@@ -136,29 +136,23 @@ const KitProducts = () => {
               <div className="mb-6">
                 <p className="text-sm lg:text-base text-gray-300 mb-4">💰 Comprando separado você paga R$ 619,80:</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl mx-auto mb-5">
-                  <div className="flex justify-between items-center rounded-xl text-sm px-4 py-3 bg-gradient-to-r from-white/12 to-white/6 border border-white/20 shadow-sm hover:shadow transition-shadow">
+                  <div className="flex items-center rounded-xl text-sm px-4 py-3 bg-gradient-to-r from-white/12 to-white/6 border border-white/20 shadow-sm">
                     <span className="text-white/90">• Aspirador Portátil Premium</span>
-                    <span className="font-extrabold text-white/90">R$ 159,90</span>
                   </div>
-                  <div className="flex justify-between items-center rounded-xl text-sm px-4 py-3 bg-gradient-to-r from-white/12 to-white/6 border border-white/20 shadow-sm hover:shadow transition-shadow">
+                  <div className="flex items-center rounded-xl text-sm px-4 py-3 bg-gradient-to-r from-white/12 to-white/6 border border-white/20 shadow-sm">
                     <span className="text-white/90">• Marmiteira Elétrica 12V</span>
-                    <span className="font-extrabold text-white/90">R$ 149,90</span>
                   </div>
-                  <div className="flex justify-between items-center rounded-xl text-sm px-4 py-3 bg-gradient-to-r from-white/12 to-white/6 border border-white/20 shadow-sm hover:shadow transition-shadow">
+                  <div className="flex items-center rounded-xl text-sm px-4 py-3 bg-gradient-to-r from-white/12 to-white/6 border border-white/20 shadow-sm">
                     <span className="text-white/90">• Aromatizador Automotivo</span>
-                    <span className="font-extrabold text-white/90">R$ 39,90</span>
                   </div>
-                  <div className="flex justify-between items-center rounded-xl text-sm px-4 py-3 bg-gradient-to-r from-white/12 to-white/6 border border-white/20 shadow-sm hover:shadow transition-shadow">
+                  <div className="flex items-center rounded-xl text-sm px-4 py-3 bg-gradient-to-r from-white/12 to-white/6 border border-white/20 shadow-sm">
                     <span className="text-white/90">• Pano Microfibra</span>
-                    <span className="font-extrabold text-white/90">R$ 89,90</span>
                   </div>
-                  <div className="flex justify-between items-center rounded-xl text-sm px-4 py-3 bg-gradient-to-r from-white/12 to-white/6 border border-white/20 shadow-sm hover:shadow transition-shadow">
+                  <div className="flex items-center rounded-xl text-sm px-4 py-3 bg-gradient-to-r from-white/12 to-white/6 border border-white/20 shadow-sm">
                     <span className="text-white/90">• Cooler Térmico 6L</span>
-                    <span className="font-extrabold text-white/90">R$ 109,90</span>
                   </div>
-                  <div className="flex justify-between items-center rounded-xl text-sm px-4 py-3 bg-gradient-to-r from-white/12 to-white/6 border border-white/20 shadow-sm hover:shadow transition-shadow md:col-span-2">
+                  <div className="flex items-center rounded-xl text-sm px-4 py-3 bg-gradient-to-r from-white/12 to-white/6 border border-white/20 shadow-sm md:col-span-2">
                     <span className="text-white/90">• Câmera automotiva Full HD</span>
-                    <span className="font-extrabold text-white/90">R$ 69,90</span>
                   </div>
                 </div>
 
